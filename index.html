@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d71920">
+  <title>Honda Dealer | Temukan Mobil Impian</title>
+  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pro.css"><link rel="stylesheet" href="css/editorial.css"><link rel="stylesheet" href="css/mv.css"></head>
+<body class="mv-site">
+  <header class="site-header editorial-header">
+    <div class="mv-left"><button class="mega-toggle" data-mega="models" aria-expanded="false">Mobil</button><button class="mega-toggle" data-mega="ownership" aria-expanded="false">Layanan</button><button id="navToggle" class="nav-toggle" aria-label="Buka menu" aria-controls="mainNav" aria-expanded="false"><span class="hamburger-icon" aria-hidden="true"></span><span class="menu-word">Menu</span></button></div>
+    <a class="brand" href="#beranda" aria-label="Honda Dealer Beranda"><span class="brand-mark">H</span><span>HONDA<span class="brand-sub">DEALER</span></span></a>
+    <div class="mv-right"><button class="mega-toggle" data-mega="company" aria-expanded="false">Perusahaan</button><button class="mega-toggle" data-mega="dealer" aria-expanded="false">Dealer</button><button class="mega-toggle" data-mega="catalogue" aria-expanded="false">Katalog</button><a class="mv-login" href="login.html">Login</a><span class="mv-lang">🇮🇩 ID</span></div>
+  <div id="megaPanel" class="mega-panel" hidden></div></header><div id="megaShade" class="mega-shade" hidden></div>
+  <dialog id="mainNav" class="editorial-menu" aria-labelledby="menuTitle">
+    <div class="menu-head"><button id="navClose" type="button" aria-label="Tutup menu">×</button><span id="menuTitle">HONDA DEALER</span></div>
+    <nav aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a><a href="#mobil">Models / Mobil</a><a href="#pembiayaan">Pembiayaan</a><a href="layanan.html">Layanan</a><a href="#berita">Informasi & penawaran</a><a href="layanan.html">Booking online</a><button id="testDriveTop" type="button">Hubungi sales</button><a href="login.html">Login admin & sales</a>
+    </nav>
+    <div class="menu-footer">HONDA · DRIVE YOUR AMBITION</div>
+  </dialog>
+
+  <main>
+    <section id="beranda" class="hero">
+      <img class="hero-photo" alt="" src="assets/no-car-image.svg"><div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">DRIVE YOUR AMBITION</p>
+        <h1 id="heroTitle">Temukan Mobil yang<br><span>Bergerak Bersamamu.</span></h1>
+        <p id="heroDesc">Jelajahi pilihan mobil Honda, hitung simulasi pembiayaan, dan temukan penawaran yang sesuai kebutuhan.</p>
+        <div class="hero-actions"><a href="#mobil" class="btn btn-red">Jelajahi Model <span>↗</span></a><a href="#pembiayaan" class="btn btn-light">Hitung Cicilan</a></div>
+      </div>
+      <div class="hero-controls" aria-label="Navigasi slideshow"><button type="button" data-slide="prev" aria-label="Slide sebelumnya">‹</button><div class="hero-dots"></div><button type="button" data-slide="next" aria-label="Slide berikutnya">›</button><button type="button" data-slide="pause" aria-label="Jeda slideshow">Ⅱ</button></div><div class="hero-note"><span class="red-dot"></span> Pilihan mobil untuk setiap perjalanan</div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>01</strong><span>Pilihan model beragam</span></div><div><strong>02</strong><span>Simulasi pembiayaan</span></div><div><strong>03</strong><span>Bantuan sales</span></div><div><strong>04</strong><span>Layanan purnajual</span></div>
+    </section>
+
+    <section id="galeri" class="section gallery-section">
+      <div class="section-heading"><div><p class="eyebrow">GALERI PILIHAN HONDA</p><h2>Lebih Banyak Foto, Lebih Banyak Pilihan</h2><p class="muted">Kumpulan foto model Honda yang tersedia di Indonesia. Klik detail pada kartu mobil untuk melihat informasi lengkap, atau jelajahi galeri ini untuk referensi cepat.</p></div><a href="#mobil" class="text-link">Buka katalog lengkap ↗</a></div>
+      <div id="photoWall" class="photo-wall"></div>
+    </section>
+
+    <section id="mobil" class="section">
+      <div class="section-heading"><div><p class="eyebrow">TEMUKAN PILIHANMU</p><h2>Jelajahi Mobil Honda</h2><p class="muted">Bandingkan model dan temukan kendaraan yang cocok untuk kebutuhan sehari-hari.</p></div><a href="#pembiayaan" class="text-link">Simulasi pembiayaan ↗</a></div>
+      <div class="filters"><input id="carSearch" type="search" placeholder="Cari nama mobil..." aria-label="Cari mobil"><select id="categoryFilter" aria-label="Filter kategori"><option value="">Semua kategori</option><option>City Car</option><option>Hatchback</option><option>SUV</option><option>MPV</option><option>Sedan</option><option>Coupe</option><option>Sport</option></select><select id="sortCars" aria-label="Urutkan mobil"><option value="featured">Pilihan dealer</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option></select></div>
+      <div id="carGrid" class="car-grid"></div>
+      <p id="emptyCars" class="empty hidden">Mobil tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <section id="pembiayaan" class="section finance-section">
+      <div class="section-heading"><div><p class="eyebrow">RANCANG PEMBELIAN</p><h2>Simulasi Pembiayaan</h2><p class="muted">Perkiraan angsuran untuk membantu perencanaan. Angka final mengikuti persetujuan lembaga pembiayaan.</p></div></div>
+      <div class="finance-layout">
+        <form id="financeForm" class="panel finance-form">
+          <label>Pilih mobil<select id="financeCar"></select></label>
+          <div class="field-grid"><label>Harga mobil (Rp)<input id="financePrice" type="number" min="1" required></label><label>Uang muka (DP) (Rp)<input id="financeDp" type="number" min="0" value="50000000" required></label></div>
+          <div class="field-grid"><label>Tenor<select id="financeTenor"><option value="12">12 bulan</option><option value="24">24 bulan</option><option value="36" selected>36 bulan</option><option value="48">48 bulan</option><option value="60">60 bulan</option></select></label><label>Bunga flat per tahun (%)<input id="financeRate" type="number" min="0" max="40" step="0.1" value="5.5" required></label></div>
+          <button class="btn btn-red btn-block" type="submit">Hitung Angsuran</button>
+          <p class="fine-print">Bunga di sini adalah nilai simulasi yang bisa diubah. Bukan penawaran resmi dari bank atau leasing.</p>
+        </form>
+        <div class="panel result-panel"><p class="eyebrow">ESTIMASI PEMBAYARAN</p><span class="result-label">Angsuran per bulan</span><h3 id="monthlyResult">Rp 0</h3><div class="result-row"><span>Harga mobil</span><strong id="resultPrice">Rp 0</strong></div><div class="result-row"><span>Uang muka</span><strong id="resultDp">Rp 0</strong></div><div class="result-row"><span>Pokok pembiayaan</span><strong id="resultPrincipal">Rp 0</strong></div><div class="result-row"><span>Total bunga estimasi</span><strong id="resultInterest">Rp 0</strong></div><div class="result-row"><span>Tenor</span><strong id="resultTenor">36 bulan</strong></div><button id="financeContact" class="btn btn-dark btn-block">Tanyakan simulasi ini</button></div>
+      </div>
+    </section>
+
+    <section id="layanan" class="section service-section"><div class="section-heading"><div><p class="eyebrow">LEBIH DARI SEKADAR MOBIL</p><h2>Layanan untuk Perjalananmu</h2></div></div>
+      <div class="service-grid"><article class="service-card"><div class="service-icon">↗</div><h3>Konsultasi Pembelian</h3><p>Dapatkan bantuan memilih model dan varian sesuai kebutuhan.</p></article><article class="service-card"><div class="service-icon">％</div><h3>Simulasi Pembiayaan</h3><p>Bandingkan DP, tenor, dan bunga sebelum mengajukan pembelian.</p></article><article class="service-card"><div class="service-icon">✓</div><h3>Dukungan Purnajual</h3><p>Tanyakan informasi perawatan dan layanan setelah pembelian.</p></article></div>
+    </section>
+
+    <section id="berita" class="section news-section"><div class="section-heading"><div><p class="eyebrow">INFO DEALER</p><h2>Informasi & Penawaran</h2><p class="muted">Informasi umum yang dapat diperbarui oleh pengelola situs.</p></div></div><div id="newsGrid" class="news-grid"></div></section>
+
+    <section class="contact-banner"><div><p class="eyebrow">SIAP MEMULAI PERJALANAN?</p><h2>Tim kami siap membantu.</h2><p>Diskusikan pilihan kendaraan dan rencana pembelianmu bersama sales.</p></div><button id="contactBottom" class="btn btn-light">Hubungi Sales ↗</button></section>
+  </main>
+
+  <footer class="footer">
+    <div class="brand"><span class="brand-mark">H</span><span>HONDA<span class="brand-sub">DEALER</span></span></div>
+    <p>Website demo dealer. Harga dan simulasi bersifat ilustratif dan harus diverifikasi sebelum digunakan untuk transaksi nyata.</p>
+    <a class="text-link" href="login.html">Login</a> · <a class="text-link" href="dosen.html">Panduan Penilaian Dosen</a><div class="footer-copy">© <span id="year"></span> Honda Dealer Demo · Proyek akademik, bukan situs resmi Honda. Data booking hanya disimpan di browser ini.</div>
+    <section class="project-team" aria-labelledby="teamTitle">
+      <p class="eyebrow">TUGAS KELOMPOK</p>
+      <h3 id="teamTitle">Dikembangkan oleh</h3>
+      <ul>
+        <li><span>Robin Qurnio Elson</span><strong>231011450470</strong></li>
+        <li><span>Rayhan Santanu</span><strong>231011450662</strong></li>
+        <li><span>Syifa Saesarini</span><strong>231011403686</strong></li>
+      </ul>
+    </section>
+  </footer>
+
+  <div id="contactModal" class="modal hidden"><div class="modal-backdrop" data-close="contactModal"></div><div class="modal-card"><button class="modal-close" data-close="contactModal">×</button><p class="eyebrow">KONSULTASI</p><h2>Hubungi Sales</h2><form id="contactForm"><label>Nama<input id="contactName" required></label><label>Nomor WhatsApp<input id="contactPhone" required inputmode="tel" placeholder="08xxxxxxxxxx"></label><label>Mobil yang diminati<select id="contactCar"></select></label><label>Pesan<textarea id="contactMessage" rows="3" placeholder="Ceritakan kebutuhan atau pertanyaan..."></textarea></label><button class="btn btn-red btn-block">Buat Pesan WhatsApp</button></form></div></div>
+
+  <div id="detailModal" class="modal hidden"><div class="modal-backdrop" data-close="detailModal"></div><div class="modal-card modal-wide"><button class="modal-close" data-close="detailModal">×</button><div id="detailContent"></div></div></div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="js/catalog.js"></script><script src="js/car-images.js"></script>
+  <script src="js/app.js"></script>
+<script src="js/store.js"></script><script src="js/hero-slides.js"></script><script src="js/mv.js"></script></body>
+</html>
